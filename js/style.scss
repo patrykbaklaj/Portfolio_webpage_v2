@@ -20,9 +20,14 @@ section {
 
 .container {
 	min-height: 100vh;
+	width: 80%;
 	display: flex;
 	justify-content: center;
 
+}
+
+.visibility {
+	display: block;
 }
 
 // <<<<<<<<<<<<<<< WELCOM SECTION STYLE >>>>>>>>>>>>>>>>>>>>
@@ -40,6 +45,7 @@ $transition_style: all 0.3s ease;
 }
 
 $animation_sharpen: sharpen 0.5s linear backwards;
+$animation_arrow: arrow 2s infinite;
 @mixin animation_prefix ($animation){
 	-webkit-animation: $animation;
 	-moz-animation: $animation;
@@ -79,20 +85,37 @@ $animation_sharpen: sharpen 0.5s linear backwards;
 		}
 	}
 
-	$animation_arrow: arrow 0.8s ease infinite;
-
-	.arrow_down {
+	#arrow_down  {
+		display: none;
 		position: fixed;
-		bottom: 10%;
-		border: solid black;
-		border-width: 0 3px 3px 0;
-		display: inline-block;
-		padding: 1em;
-		// @include transition_prefix($transition_style);
-		transform: rotate(45deg);
+		width: 2.5em;
+		height: 2.5em;
+		bottom: 5%;
+		left: 48%;
 		-webkit-transform: rotate(45deg);
-	}
+		border-left: none;
+		border-top: none;
+		border-right: 2px #fff solid;
+		border-bottom: 2px #fff solid;
 
+		&:before {
+			position: absolute;
+			left: 50%;
+			content: '';
+			width: 50%;
+			height: 50%;
+			top: 50%;
+			margin: -10px 0 0 -10px;
+			border-left: none;
+			border-top: none;
+			border-right: 1px #fff solid;
+			border-bottom: 1px #fff solid;
+			@include animation_prefix($animation_arrow);
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-name: arrow;
+		}
+	}
 }
 
 // delay mixin for main text (firstname and surname)
@@ -110,10 +133,33 @@ $animation_sharpen: sharpen 0.5s linear backwards;
 	}
 }
 
-
-
 // <<<<<<<<<<<<<<<<<< ANIMATIONS FOR WELCOME SECTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // animation for main text (firstname and surname)
+
+@mixin arrow {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-10px, -10px);
+	}
+}
+
+@keyframes arrow {
+	@include arrow;
+}
+
+@-moz-keyframes arrow {
+	@include arrow;
+}
+@-webkit-keyframes arrow {
+	@include arrow;
+}
+@-ms-keyframes arrow {
+	@include arrow;
+}
+
 @mixin animation_sharpen_prefixes {
 	0% {
 		opacity: 0;

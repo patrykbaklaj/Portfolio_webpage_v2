@@ -15,8 +15,12 @@ section {
 
 .container {
   min-height: 100vh;
+  width: 80%;
   display: flex;
   justify-content: center; }
+
+.visibility {
+  display: block; }
 
 #welcome {
   height: 100vh;
@@ -49,15 +53,37 @@ section {
       font-weight: 400;
       text-shadow: 0 0 1px #fff;
       text-align: center; }
-  #welcome .arrow_down {
+  #welcome #arrow_down {
+    display: none;
     position: fixed;
-    bottom: 10%;
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 1em;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg); }
+    width: 2.5em;
+    height: 2.5em;
+    bottom: 5%;
+    left: 48%;
+    -webkit-transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 2px #fff solid;
+    border-bottom: 2px #fff solid; }
+    #welcome #arrow_down:before {
+      position: absolute;
+      left: 50%;
+      content: '';
+      width: 50%;
+      height: 50%;
+      top: 50%;
+      margin: -10px 0 0 -10px;
+      border-left: none;
+      border-top: none;
+      border-right: 1px #fff solid;
+      border-bottom: 1px #fff solid;
+      -webkit-animation: arrow 2s infinite;
+      -moz-animation: arrow 2s infinite;
+      -ms-animation: arrow 2s infinite;
+      -animation: arrow 2s infinite;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-name: arrow; }
 
 #welcome h2 span.name_animate:nth-child(0) {
   -webkit-animation-delay: 0s;
@@ -364,6 +390,34 @@ section {
   -moz-animation-delay: 2.5s;
   -ms-animation-delay: 2.5s;
   animation-delay: 2.5s; }
+
+@keyframes arrow {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px); } }
+
+@-moz-keyframes arrow {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px); } }
+
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px); } }
+
+@-ms-keyframes arrow {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px); } }
 
 @keyframes sharpen {
   0% {

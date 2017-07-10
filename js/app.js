@@ -8,6 +8,8 @@ $(document).ready(function() {
   name.css("display", "block");
   // text to type
   let h3 = $("h3");
+  // animated arrow
+  const arrow = $("#arrow_down");
 
   // menu handler function invoke
   menuHandler();
@@ -15,6 +17,8 @@ $(document).ready(function() {
   spliter(name, "name_animate");
   // type text function invoke
   typeText(h3);
+  // arrow Handler
+  arrowHandler();
 
   function menuHandler(){
     $('#toggle').click(function() {
@@ -45,6 +49,12 @@ $(document).ready(function() {
       lifeLike: true,
       autoStart: false
     });
+  }
+
+  function arrowHandler(){
+    let timeoutID = setTimeout(function () {
+      arrow.css("display", "block");
+    }, 11000);
   }
 
 });
