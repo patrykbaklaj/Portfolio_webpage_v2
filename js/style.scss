@@ -1,0 +1,146 @@
+
+html * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 1.4vmax;
+}
+
+body {
+	background-color: #2F2F2F;
+	color: rgb(255, 255, 255);
+	color: rgba(255, 255, 255, 0.8);
+	overflow-x: hidden;
+
+}
+
+section {
+	width: 100vw;
+}
+
+.container {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+
+}
+
+// <<<<<<<<<<<<<<< WELCOM SECTION STYLE >>>>>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<<<< MIXINS FOR welcome Section >>>>>>>>>>>>>>>>>>>>
+
+
+$transition_style: all 0.3s ease;
+// prefix mixin
+@mixin transition_prefix ($style) {
+	-webkit-transition: $style;
+	-moz-transition: $style;
+	-o-transition: $style;
+	-ms-transition: $style;
+	transition: $style;
+}
+
+$animation_sharpen: sharpen 0.5s linear backwards;
+@mixin animation_prefix ($animation){
+	-webkit-animation: $animation;
+	-moz-animation: $animation;
+	-ms-animation: $animation;
+	-animation: $animation;
+}
+
+#welcome {
+	height: 100vh;
+	background-image: url('../assets/tweed.png');
+	.welcome_text {
+		text-align: center;
+		margin-top: 30vh;
+		// name
+		h2 {
+			letter-spacing: 0.1em;
+			margin-bottom: 3em;
+			span.name_animate {
+				font-size: 2.8em;
+				line-height: 1.5em;
+				color: #CFCFCF;
+				text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0,0,0,0.7);
+				@include transition_prefix($transition_style);
+				@include animation_prefix($animation_sharpen);
+				&:hover {
+					text-shadow: 0px 0px 1em #fff;
+				}
+			}
+		}
+		// description
+		h3 {
+			font-size: 1.7em;
+			line-height: 1.5em;
+			font-weight: 400;
+			text-shadow: 0 0 1px #fff;
+			text-align: center;
+		}
+	}
+
+	$animation_arrow: arrow 0.8s ease infinite;
+
+	.arrow_down {
+		position: fixed;
+		bottom: 10%;
+		border: solid black;
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 1em;
+		// @include transition_prefix($transition_style);
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+	}
+
+}
+
+// delay mixin for main text (firstname and surname)
+@mixin animation_delay($delay) {
+	-webkit-animation-delay: $delay;
+	-moz-animation-delay: $delay;
+	-ms-animation-delay: $delay;
+	animation-delay: $delay;
+}
+
+// loop for delay setting (firstname and surname)
+@for $i from 0 through 50 {
+	#welcome h2 span.name_animate:nth-child(#{$i}){
+		@include animation_delay(0 + $i*0.05s);
+	}
+}
+
+
+
+// <<<<<<<<<<<<<<<<<< ANIMATIONS FOR WELCOME SECTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// animation for main text (firstname and surname)
+@mixin animation_sharpen_prefixes {
+	0% {
+		opacity: 0;
+		text-shadow: 0 0 100px #fff;
+		color: transparent;
+	}
+	90% {
+		opacity: 0.9;
+		text-shadow: 0px 0px 10px #fff;
+		color: transparent;
+	}
+	100% {
+		color: #fff;
+		opacity: 1;
+		text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0,0,0,0.7);
+	}
+}
+@keyframes sharpen {
+	@include animation_sharpen_prefixes;
+}
+
+@-moz-keyframes sharpen {
+	@include animation_sharpen_prefixes;
+}
+@-webkit-keyframes sharpen {
+	@include animation_sharpen_prefixes;
+}
+@-ms-keyframes sharpen {
+	@include animation_sharpen_prefixes;
+}
