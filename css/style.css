@@ -12,6 +12,52 @@ body {
 
 section {
   width: 100vw; }
+  section.in_viewport {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-animation: section_animation 2s linear backwards;
+    -moz-animation: section_animation 2s linear backwards;
+    -ms-animation: section_animation 2s linear backwards;
+    -animation: section_animation 2s linear backwards; }
+
+@keyframes section_animation {
+  0% {
+    opacity: 0; }
+  90% {
+    opacity: 0.9; }
+  100% {
+    opacity: 1;
+    text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
+
+@-moz-keyframes section_animation {
+  0% {
+    opacity: 0; }
+  90% {
+    opacity: 0.9; }
+  100% {
+    opacity: 1;
+    text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
+
+@-webkit-keyframes section_animation {
+  0% {
+    opacity: 0; }
+  90% {
+    opacity: 0.9; }
+  100% {
+    opacity: 1;
+    text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
+
+@-ms-keyframes section_animation {
+  0% {
+    opacity: 0; }
+  90% {
+    opacity: 0.9; }
+  100% {
+    opacity: 1;
+    text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
 
 .container {
   min-height: 100vh;
@@ -56,10 +102,12 @@ section {
   #welcome #arrow_down {
     display: none;
     position: fixed;
+    cursor: pointer;
     width: 2.5em;
     height: 2.5em;
     bottom: 5%;
     left: 48%;
+    transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     border-left: none;
     border-top: none;

@@ -14,8 +14,62 @@ body {
 
 }
 
+// mixin for transition prefixes and animations
+$transition_style: all 0.3s ease;
+// prefix mixin
+@mixin transition_prefix ($style) {
+	-webkit-transition: $style;
+	-moz-transition: $style;
+	-o-transition: $style;
+	-ms-transition: $style;
+	transition: $style;
+}
+
+$animation_sharpen: sharpen 0.5s linear backwards;
+$animation_section: section_animation 2s linear backwards;
+$animation_arrow: arrow 2s infinite;
+
+
+@mixin animation_prefix ($animation){
+	-webkit-animation: $animation;
+	-moz-animation: $animation;
+	-ms-animation: $animation;
+	-animation: $animation;
+}
+
 section {
 	width: 100vw;
+	&.in_viewport {
+		@include transition_prefix ($transition_style);
+		@include animation_prefix($animation_section);
+	}
+}
+
+// keyframes for section animation
+@mixin animation_section_prefixes {
+	0% {
+		opacity: 0;
+	}
+	90% {
+		opacity: 0.9;
+	}
+	100% {
+		opacity: 1;
+		text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0,0,0,0.7);
+	}
+}
+@keyframes section_animation {
+	@include animation_section_prefixes;
+}
+
+@-moz-keyframes section_animation {
+	@include animation_section_prefixes;
+}
+@-webkit-keyframes section_animation {
+	@include animation_section_prefixes;
+}
+@-ms-keyframes section_animation {
+	@include animation_section_prefixes;
 }
 
 .container {
@@ -31,27 +85,8 @@ section {
 }
 
 // <<<<<<<<<<<<<<< WELCOM SECTION STYLE >>>>>>>>>>>>>>>>>>>>
-// <<<<<<<<<<<<<<< MIXINS FOR welcome Section >>>>>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<<<< MIXINS FOR  Section 01 >>>>>>>>>>>>>>>>>>>>
 
-
-$transition_style: all 0.3s ease;
-// prefix mixin
-@mixin transition_prefix ($style) {
-	-webkit-transition: $style;
-	-moz-transition: $style;
-	-o-transition: $style;
-	-ms-transition: $style;
-	transition: $style;
-}
-
-$animation_sharpen: sharpen 0.5s linear backwards;
-$animation_arrow: arrow 2s infinite;
-@mixin animation_prefix ($animation){
-	-webkit-animation: $animation;
-	-moz-animation: $animation;
-	-ms-animation: $animation;
-	-animation: $animation;
-}
 
 #welcome {
 	height: 100vh;
@@ -88,10 +123,12 @@ $animation_arrow: arrow 2s infinite;
 	#arrow_down  {
 		display: none;
 		position: fixed;
+		cursor: pointer;
 		width: 2.5em;
 		height: 2.5em;
 		bottom: 5%;
 		left: 48%;
+		transform: rotate(45deg);
 		-webkit-transform: rotate(45deg);
 		border-left: none;
 		border-top: none;
@@ -133,7 +170,7 @@ $animation_arrow: arrow 2s infinite;
 	}
 }
 
-// <<<<<<<<<<<<<<<<<< ANIMATIONS FOR WELCOME SECTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<<<<<<< ANIMATIONS FOR welcome SECTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // animation for main text (firstname and surname)
 
 @mixin arrow {
@@ -190,3 +227,6 @@ $animation_arrow: arrow 2s infinite;
 @-ms-keyframes sharpen {
 	@include animation_sharpen_prefixes;
 }
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<< SECTION SECOND STYLING >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
