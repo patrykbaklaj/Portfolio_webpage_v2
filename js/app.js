@@ -57,9 +57,9 @@ $(document).ready(function() {
     let timeoutID = setTimeout(function () {
       arrow.css("display", "block");
     }, 11000);
-    // scroll effect
-    arrow.on("click", function(){
 
+    // scroll effect to second section (ABOUT)
+    arrow.on("click", function(){
       $('html,body').animate({
         scrollTop: $("#about").offset().top},
         1000);
