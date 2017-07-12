@@ -677,3 +677,32 @@ section {
       margin: 2em; }
       #tech .container .skill_icons img {
         height: 4vmax; }
+
+#projects {
+  background-color: #315659; }
+  #projects .container {
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    #projects .container .section_second_header {
+      color: #FEF7F1;
+      font-size: 2em;
+      margin-bottom: 1em;
+      line-height: 1.3em; }
+    #projects .container .hr {
+      width: 40%;
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0)); }
+  #projects .projects {
+    width: 90%;
+    min-height: 70vh; }
+    #projects .projects .single_project {
+      padding: 2em; }
+      #projects .projects .single_project img {
+        width: 100%;
+        border: 1px solid #778688; }
+
+#contact {
+  background-color: #141B41; }
