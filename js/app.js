@@ -48,7 +48,7 @@ $(document).ready(function() {
       startDelay: 3000,
       speed: 90,
       lifeLike: true,
-      autoStart: false
+      autoStart: true
     });
   }
 
