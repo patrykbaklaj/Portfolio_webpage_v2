@@ -7,7 +7,7 @@ $(document).ready(function() {
   // text to type
   let h3 = $("h3");
   // animated arrow
-  const arrow = $("#arrow_down");
+  const arrow = $(".arrow_down");
 
   // menu handler function invoke
   menuHandler();
@@ -63,7 +63,6 @@ $(document).ready(function() {
       $('html,body').animate({
         scrollTop: $("#about").offset().top},
         1000);
-        $(this).remove();
       });
     }
 

@@ -7,7 +7,7 @@ html * {
 }
 
 body {
-	background-color: #2F2F2F;
+	background-color: #2A2A2A;
 	color: rgb(255, 255, 255);
 	color: rgba(255, 255, 255, 0.8);
 	overflow-x: hidden;
@@ -96,7 +96,7 @@ body {
 			transform: scale(1.5);
 		}
 		a {
-			font-size: 3em;
+			font-size: 2.5em;
 			line-height: 1.81em;
 			color: #fff;
 			text-decoration: none;
@@ -123,7 +123,7 @@ $transition_style: all 0.3s ease;
 }
 
 $animation_sharpen: sharpen 0.5s linear backwards;
-$animation_section: section_animation 2s linear backwards;
+$animation_section: section_animation 1s ease backwards;
 $animation_arrow: arrow 2s infinite;
 
 
@@ -152,7 +152,6 @@ section {
 	}
 	100% {
 		opacity: 1;
-		text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0,0,0,0.7);
 	}
 }
 @keyframes section_animation {
@@ -217,9 +216,9 @@ section {
 		}
 	}
 
-	#arrow_down  {
+	.arrow_down  {
 		display: none;
-		position: fixed;
+		position: absolute;
 		cursor: pointer;
 		width: 2.5em;
 		height: 2.5em;
@@ -326,4 +325,68 @@ section {
 }
 
 
-// <<<<<<<<<<<<<<<<<<<<<<<< SECTION SECOND STYLING >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<<<<<<<<<<<<< SECTION SECOND (ABOUT) STYLING >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#about {
+	.container {
+		width: 100%;
+		.about_text {
+			color: #FEF7F1;
+			width: 70%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.inside_container {
+				width: 70%;
+				.section_second_header {
+					margin-bottom: 0.4em;
+					font-size: 2em;
+				}
+				.hr {
+					margin-bottom: 1.7em;
+					width: 60%;
+					border: 0;
+					height: 1px;
+					background-image: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
+				}
+				.section_second_text {
+					margin-bottom: 1em;
+				}
+			}
+		}
+		.icons {
+			@extend .about_text;
+			width: 30%;
+			text-align: center;
+			color: #2A2A2A;
+			background-color: #FEF7F1;
+			p {
+				font-weight: bold;
+			}
+			ul li {
+				margin: 2em auto;
+				list-style: none;
+				img {
+					margin-top: 0;
+				}
+			}
+			img {
+				width: 10%;
+				margin: 0.5em;
+			}
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+			.icon_download {
+				margin-top: 5em;
+				width: 100%;
+				text-align: center;
+				i {
+					margin: 0.5em auto;
+					font-size: 2em;
+				}
+			}
+
+		}
+	}
+}

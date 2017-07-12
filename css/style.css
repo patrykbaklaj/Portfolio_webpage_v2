@@ -5,7 +5,7 @@ html * {
   font-size: 1.4vmax; }
 
 body {
-  background-color: #2F2F2F;
+  background-color: #2A2A2A;
   color: white;
   color: rgba(255, 255, 255, 0.8);
   overflow-x: hidden; }
@@ -85,7 +85,7 @@ body {
       transition: all .7s ease;
       transform: scale(1.5); }
     .overlay ul li a {
-      font-size: 3em;
+      font-size: 2.5em;
       line-height: 1.81em;
       color: #fff;
       text-decoration: none;
@@ -104,10 +104,10 @@ section {
     -o-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    -webkit-animation: section_animation 2s linear backwards;
-    -moz-animation: section_animation 2s linear backwards;
-    -ms-animation: section_animation 2s linear backwards;
-    -animation: section_animation 2s linear backwards; }
+    -webkit-animation: section_animation 1s ease backwards;
+    -moz-animation: section_animation 1s ease backwards;
+    -ms-animation: section_animation 1s ease backwards;
+    -animation: section_animation 1s ease backwards; }
 
 @keyframes section_animation {
   0% {
@@ -115,8 +115,7 @@ section {
   90% {
     opacity: 0.9; }
   100% {
-    opacity: 1;
-    text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
+    opacity: 1; } }
 
 @-moz-keyframes section_animation {
   0% {
@@ -124,8 +123,7 @@ section {
   90% {
     opacity: 0.9; }
   100% {
-    opacity: 1;
-    text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
+    opacity: 1; } }
 
 @-webkit-keyframes section_animation {
   0% {
@@ -133,8 +131,7 @@ section {
   90% {
     opacity: 0.9; }
   100% {
-    opacity: 1;
-    text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
+    opacity: 1; } }
 
 @-ms-keyframes section_animation {
   0% {
@@ -142,8 +139,7 @@ section {
   90% {
     opacity: 0.9; }
   100% {
-    opacity: 1;
-    text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
+    opacity: 1; } }
 
 .container {
   min-height: 100vh;
@@ -185,9 +181,9 @@ section {
       font-weight: 400;
       text-shadow: 0 0 1px #fff;
       text-align: center; }
-  #welcome #arrow_down {
+  #welcome .arrow_down {
     display: none;
-    position: fixed;
+    position: absolute;
     cursor: pointer;
     width: 2.5em;
     height: 2.5em;
@@ -199,7 +195,7 @@ section {
     border-top: none;
     border-right: 2px #fff solid;
     border-bottom: 2px #fff solid; }
-    #welcome #arrow_down:before {
+    #welcome .arrow_down:before {
       position: absolute;
       left: 50%;
       content: '';
@@ -608,3 +604,50 @@ section {
     color: #fff;
     opacity: 1;
     text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
+
+#about .container {
+  width: 100%; }
+  #about .container .about_text, #about .container .icons {
+    color: #FEF7F1;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #about .container .about_text .inside_container, #about .container .icons .inside_container {
+      width: 70%; }
+      #about .container .about_text .inside_container .section_second_header, #about .container .icons .inside_container .section_second_header {
+        margin-bottom: 0.4em;
+        font-size: 2em; }
+      #about .container .about_text .inside_container .hr, #about .container .icons .inside_container .hr {
+        margin-bottom: 1.7em;
+        width: 60%;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0)); }
+      #about .container .about_text .inside_container .section_second_text, #about .container .icons .inside_container .section_second_text {
+        margin-bottom: 1em; }
+  #about .container .icons {
+    width: 30%;
+    text-align: center;
+    color: #2A2A2A;
+    background-color: #FEF7F1; }
+    #about .container .icons p {
+      font-weight: bold; }
+    #about .container .icons ul li {
+      margin: 2em auto;
+      list-style: none; }
+      #about .container .icons ul li img {
+        margin-top: 0; }
+    #about .container .icons img {
+      width: 10%;
+      margin: 0.5em; }
+    #about .container .icons a {
+      text-decoration: none;
+      color: inherit; }
+    #about .container .icons .icon_download {
+      margin-top: 5em;
+      width: 100%;
+      text-align: center; }
+      #about .container .icons .icon_download i {
+        margin: 0.5em auto;
+        font-size: 2em; }
