@@ -605,49 +605,75 @@ section {
     opacity: 1;
     text-shadow: 0px 0px 2px #fff, 1px 1px 4px rgba(0, 0, 0, 0.7); } }
 
-#about .container {
-  width: 100%; }
-  #about .container .about_text, #about .container .icons {
+#about .container-fluid, #about .column {
+  margin: 0;
+  padding: 0; }
+  #about .container-fluid .about_text, #about .container-fluid .icons, #about .column .about_text, #about .column .icons {
+    min-height: 100vh;
     color: #FEF7F1;
-    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center; }
-    #about .container .about_text .inside_container, #about .container .icons .inside_container {
+    #about .container-fluid .about_text .inside_container, #about .container-fluid .icons .inside_container, #about .column .about_text .inside_container, #about .column .icons .inside_container {
       width: 70%; }
-      #about .container .about_text .inside_container .section_second_header, #about .container .icons .inside_container .section_second_header {
+      #about .container-fluid .about_text .inside_container .section_second_header, #about .container-fluid .icons .inside_container .section_second_header, #about .column .about_text .inside_container .section_second_header, #about .column .icons .inside_container .section_second_header {
         margin-bottom: 0.4em;
         font-size: 2em; }
-      #about .container .about_text .inside_container .hr, #about .container .icons .inside_container .hr {
+      #about .container-fluid .about_text .inside_container .hr, #about .container-fluid .icons .inside_container .hr, #about .column .about_text .inside_container .hr, #about .column .icons .inside_container .hr {
         margin-bottom: 1.7em;
         width: 60%;
         border: 0;
         height: 1px;
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0)); }
-      #about .container .about_text .inside_container .section_second_text, #about .container .icons .inside_container .section_second_text {
+      #about .container-fluid .about_text .inside_container .section_second_text, #about .container-fluid .icons .inside_container .section_second_text, #about .column .about_text .inside_container .section_second_text, #about .column .icons .inside_container .section_second_text {
         margin-bottom: 1em; }
-  #about .container .icons {
-    width: 30%;
+  #about .container-fluid .icons, #about .column .icons {
+    width: 100%;
+    min-height: 100vh;
     text-align: center;
     color: #2A2A2A;
     background-color: #FEF7F1; }
-    #about .container .icons p {
+    #about .container-fluid .icons p, #about .column .icons p {
       font-weight: bold; }
-    #about .container .icons ul li {
+    #about .container-fluid .icons ul li, #about .column .icons ul li {
       margin: 2em auto;
       list-style: none; }
-      #about .container .icons ul li img {
+      #about .container-fluid .icons ul li img, #about .column .icons ul li img {
         margin-top: 0; }
-    #about .container .icons img {
+    #about .container-fluid .icons img, #about .column .icons img {
       width: 10%;
       margin: 0.5em; }
-    #about .container .icons a {
+    #about .container-fluid .icons a, #about .column .icons a {
       text-decoration: none;
       color: inherit; }
-    #about .container .icons .icon_download {
+    #about .container-fluid .icons .icon_download, #about .column .icons .icon_download {
       margin-top: 5em;
       width: 100%;
       text-align: center; }
-      #about .container .icons .icon_download i {
+      #about .container-fluid .icons .icon_download i, #about .column .icons .icon_download i {
         margin: 0.5em auto;
         font-size: 2em; }
+
+#tech {
+  background-color: #778688;
+  color: #FEF7F1; }
+  #tech .container {
+    width: 60%;
+    flex-direction: column; }
+    #tech .container .about_text, #tech .container #about .container-fluid .icons, #about .container-fluid #tech .container .icons, #tech .container #about .column .icons, #about .column #tech .container .icons {
+      width: 60%; }
+      #tech .container .about_text .section_second_header, #tech .container #about .container-fluid .icons .section_second_header, #about .container-fluid #tech .container .icons .section_second_header, #tech .container #about .column .icons .section_second_header, #about .column #tech .container .icons .section_second_header {
+        font-family: inherit;
+        font-size: 2em;
+        margin-bottom: 1em;
+        line-height: 1.3em; }
+      #tech .container .about_text .hr, #tech .container #about .container-fluid .icons .hr, #about .container-fluid #tech .container .icons .hr, #tech .container #about .column .icons .hr, #about .column #tech .container .icons .hr {
+        margin-bottom: 1.7em;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0)); }
+    #tech .container .skill_icons {
+      display: inline-block;
+      margin: 2em; }
+      #tech .container .skill_icons img {
+        height: 4vmax; }

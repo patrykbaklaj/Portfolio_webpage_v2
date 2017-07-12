@@ -327,11 +327,12 @@ section {
 
 // <<<<<<<<<<<<<<<<<<<<<<<< SECTION SECOND (ABOUT) STYLING >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #about {
-	.container {
-		width: 100%;
+	.container-fluid, .column {
+		margin: 0;
+		padding: 0;
 		.about_text {
+			min-height: 100vh;
 			color: #FEF7F1;
-			width: 70%;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -354,8 +355,9 @@ section {
 			}
 		}
 		.icons {
+			width: 100%;
+			min-height: 100vh;
 			@extend .about_text;
-			width: 30%;
 			text-align: center;
 			color: #2A2A2A;
 			background-color: #FEF7F1;
@@ -386,7 +388,40 @@ section {
 					font-size: 2em;
 				}
 			}
-
 		}
+	}
+}
+
+// <<<<<<<<<<<<<<<<<<<<<<<< SECTION Third (Technologies) STYLING >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#tech {;
+	background-color: #778688;
+	color: #FEF7F1;
+	.container {
+		width: 60%;
+		flex-direction: column;
+		.about_text {
+			width: 60%;
+			.section_second_header{
+				font-family: inherit;
+				font-size: 2em;
+				margin-bottom: 1em;
+				line-height: 1.3em;
+			}
+			.hr {
+				margin-bottom: 1.7em;
+				border: 0;
+				height: 1px;
+				background-image: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
+			}
+		}
+		.skill_icons {
+			display: inline-block;
+			margin: 2em;
+			img {
+			height: 4vmax;
+			}
+		}
+
+
 	}
 }
